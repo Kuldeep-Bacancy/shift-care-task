@@ -3,6 +3,7 @@
 The setups steps expect following tools installed on the system.
 
 - Ruby
+- Used optparse library to parse command line options.(https://github.com/ruby/optparse)
 
 ### There are few assumptions i have made.
 - All hash have same fields in json file i.e all hash have id, full_name and email as per sample file.
