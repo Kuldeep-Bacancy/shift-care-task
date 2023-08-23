@@ -23,6 +23,8 @@ begin
 
   #search clients by name
   def search_clients(clients, query, field_name)
+    valid_fields = clients.first.keys
+    raise Exception.new("You are trying to search with invalid field(#{field_name}). Please search with valid field(#{valid_fields})") unless valid_fields.include?(field_name)
     matching_clients = clients.filter { |client| client[field_name].downcase.include?(query.downcase) }
     matching_clients.each { |client| puts "ID: #{client['id']}, Full_Name: #{client['full_name']},  Email: #{client['email']}" }
   end
