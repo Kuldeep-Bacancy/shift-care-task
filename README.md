@@ -9,6 +9,9 @@ The setups steps expect following tools installed on the system.
 - You must have to specify file name with full path while running any commnds
 - If you don't specify filed name then it will search with full_name
 
+### Give proper permissons to file
+- ```chmod +x shift_care_task.rb```
+
 ### Check out the repository
 
 ```bash
