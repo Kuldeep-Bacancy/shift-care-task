@@ -29,10 +29,11 @@ begin
             "You are trying to search with invalid field(#{field_name}). Please search with valid field(#{valid_fields})"
     end
 
-    matching_clients = clients.filter { |client| client[field_name].downcase.include?(query.downcase) }
+    matching_clients = clients.filter { |client| client[field_name].to_s.downcase.include?(query.downcase) }
     matching_clients.each do |client|
       puts "ID: #{client['id']}, Full_Name: #{client['full_name']},  Email: #{client['email']}"
     end
+    puts "No clients Found!" if matching_clients.empty?
   end
 
   # find duplicate emails
@@ -44,6 +45,7 @@ begin
 
     duplicate_emails = email_count.filter { |_email, count| count > 1 }
     duplicate_emails.each { |email, count| puts "#{email} => #{count} duplicates found." }
+    puts "No duplicate clients!" if duplicate_emails.empty?
   end
 
   # Main logic
