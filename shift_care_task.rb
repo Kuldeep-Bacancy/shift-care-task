@@ -9,8 +9,8 @@ begin
 
   parser = OptionParser.new do |parser|
     parser.on('--file=FILE_NAME', 'Specify JSON file with full path')
-    parser.on('--search=VALUE', 'Search By first name')
-    parser.on('--field_name=FIELD_NAME', 'specify Field Name')
+    parser.on('--search=VALUE', 'Specify Search Value')
+    parser.on('--field_name=FIELD_NAME', 'Specify Field Name')
     parser.on('--duplicates', 'Find Duplicates')
   end
 
